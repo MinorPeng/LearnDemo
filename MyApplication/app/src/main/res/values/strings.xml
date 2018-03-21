@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SwipeConflictDemo</string>
+    <string name="btn_search">这是一个title</string>
+    <string name="tv_movie">电影</string>
+    <string name="tv_book">图书</string>
+    <string name="tv_music">音乐</string>
+    <string name="tv_more">更多</string>
+    <string name="top250">Top250</string>
+    <string name="in_theaters">影院热映</string>
+    <string name="new_movies">新片榜</string>
+    <string name="coming_soon">即将上映</string>
+    <string name="weekly">口碑榜</string>
+    <string name="us_box">北美票房榜</string>
+</resources>

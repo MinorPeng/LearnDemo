@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.example.a14512.androiddevelopmentofartexploration.customView.SlidingMenu
+        android:id="@+id/sliding_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:rightPadding="50dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <include layout="@layout/left_menu"/>
+
+            <LinearLayout
+                android:id="@+id/main_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@android:color/darker_gray">
+
+                <Button
+                    android:id="@+id/change_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Change Menu"/>
+
+                <Button
+                    android:id="@+id/messengerActivityBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="messengerActivity"/>
+
+                <Button
+                    android:id="@+id/shareButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/messengerActivityBtn"
+                    android:text="share"/>
+
+
+
+                <com.example.a14512.androiddevelopmentofartexploration.Utils.CustomFAB
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:tint="@android:color/white"
+                    app:setColor="@color/colorAccent"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </com.example.a14512.androiddevelopmentofartexploration.customView.SlidingMenu>
+
+
+</RelativeLayout>

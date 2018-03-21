@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_new_group"
+            android:title="@string/new_group"
+            android:icon="@android:drawable/ic_menu_crop"/>
+
+        <item
+            android:id="@+id/nav_new_channel"
+            android:icon="@android:drawable/ic_lock_idle_lock"
+            android:title="@string/new_channel" />
+        <item
+            android:id="@+id/nav_new_chat"
+            android:icon="@android:drawable/ic_lock_silent_mode_off"
+            android:title="@string/new_secret_chat" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/nav_group_manage">
+
+        <item
+            android:id="@+id/nav_contacts"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="@string/contacts" />
+
+        <item
+            android:id="@+id/nav_calls"
+            android:icon="@android:drawable/ic_menu_call"
+            android:title="@string/calls" />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="@string/settings" />
+
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@android:drawable/ic_dialog_map"
+            android:title="@string/about_us" />
+
+        <item
+            android:id="@+id/nav_login_out"
+            android:title="@string/login_out" />
+    </group>
+
+</menu>

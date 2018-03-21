@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">DouBan</string>
+    <string name="email">1451238@qq.com</string>
+    <string name="name">Tom</string>
+    <string name="movie_text">电影</string>
+    <string name="read_text">看书</string>
+    <string name="music_text">音乐</string>
+    <string name="next">更多</string>
+    <string name="title_activity_movie_list">MovieListActivity</string>
+    <string name="title_activity_movie">MovieActivity</string>
+    <string name="toolbar_search">Search</string>
+    <string name="app_lable">豆瓣</string>
+    <string name="hint_string">请输入</string>
+    <string name="search_button">搜索</string>
+    <string name="title_activity_movie_detail">MovieDetailActivity</string>
+</resources>

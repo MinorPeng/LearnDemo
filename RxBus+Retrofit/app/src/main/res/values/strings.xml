@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RxBus+Retrofit</string>
+    <string name="calculate">计算3*2</string>
+</resources>
