@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        if (prefs.getString(WEATHER, null) != null) {
+        if (prefs.getString(WEATHER, null) == null) {
             val intent = Intent(this, WeatherActivity::class.java)
             startActivity(intent)
             finish()

@@ -15,6 +15,9 @@ import com.example.a14512.weatherkotlin.bean.City
 import com.example.a14512.weatherkotlin.bean.County
 import com.example.a14512.weatherkotlin.bean.Province
 import com.example.a14512.weatherkotlin.okhttp3.DataSupport
+import com.example.a14512.weatherkotlin.utils.PLog
+import kotlinx.android.synthetic.main.fragment_choose_area.*
+import kotlinx.android.synthetic.main.toolbar.*
 
 /**
  * @author 14512
@@ -48,20 +51,29 @@ class ChooseAreaFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.fragment_choose_area, container, false)
-        initView(view)
+        PLog.e("frag")
         return view
     }
 
-    private fun initView(view: View) {
-        title = view.findViewById(R.id.tvToolbarTitle)
-        leftImg = view.findViewById(R.id.imgToolbarLeft)
-        list = view.findViewById(R.id.chooseListView)
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initView()
+    }
+
+    private fun initView() {
+        title = tvToolbarTitle
+        leftImg = imgToolbarLeft
+        list = chooseListView
+        title!!.text = "145123"
         adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, dataList)
-        list!!.adapter = adapter
+        adapter!!.notifyDataSetChanged()
+        list!!.adapter = adapter!!
+        PLog.e(currentLevel.toString())
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        queryProvinces()
         //设置listView的 Item的点击事件
         list!!.onItemClickListener = AdapterView.OnItemClickListener {
             parent, view, position, id ->
@@ -69,7 +81,7 @@ class ChooseAreaFragment : Fragment() {
                 selectedProvince = provinceList!![position]
                 queryCities()
             } else if (currentLevel == LEVEL_CITY) {
-                selectedCity == cityList!![position]
+                selectedCity = cityList!![position]
                 queryCounties()
             } else if (currentLevel == LEVEL_COUNTY) {
                 val countyName = countyList!![position].countyName

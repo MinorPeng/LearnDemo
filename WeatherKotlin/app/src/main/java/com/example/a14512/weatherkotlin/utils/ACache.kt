@@ -103,12 +103,9 @@ object ACache {
         try {
             reader = BufferedReader(FileReader(file))
             var readString = ""
-            var currentLine: String
             do {
-                currentLine = reader.readLine()
-                if (currentLine == null) {
-                    break
-                }
+                var currentLine: String? = reader.readLine() ?: break
+                readString += currentLine
             } while (true)
 //            //kotlin此种写法报错
 //            while ((currentLine = reader.readLine()) != null) {
