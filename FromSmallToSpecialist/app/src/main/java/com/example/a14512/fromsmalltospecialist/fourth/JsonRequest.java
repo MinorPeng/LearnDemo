@@ -1,6 +1,6 @@
 package com.example.a14512.fromsmalltospecialist.fourth;
 
-import com.example.a14512.fromsmalltospecialist.fourth.base.HttpMethod;
+import com.example.a14512.fromsmalltospecialist.fourth.base.e_num.HttpMethod;
 import com.example.a14512.fromsmalltospecialist.fourth.base.Request;
 import com.example.a14512.fromsmalltospecialist.fourth.base.Response;
 import com.example.a14512.fromsmalltospecialist.fourth.imp.RequestListener;

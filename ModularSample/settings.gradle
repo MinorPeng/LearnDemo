@@ -1,0 +1,1 @@
+include ':app', ':lib_common', ':router', ':module1', ':module2', ':resource'

@@ -3,6 +3,7 @@ package com.example.a14512.fromsmalltospecialist.fourth;
 import android.util.Log;
 
 import com.example.a14512.fromsmalltospecialist.fourth.base.Request;
+import com.example.a14512.fromsmalltospecialist.fourth.imp.HttpStack;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;

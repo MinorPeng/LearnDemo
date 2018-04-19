@@ -1,9 +1,5 @@
 package com.example.a14512.fromsmalltospecialist.fourth.base;
 
-import com.example.a14512.fromsmalltospecialist.fourth.utils.EntityUtils;
-
-import java.io.IOException;
-
 /**
  * @author 14512 on 2018/4/7
  */
@@ -32,11 +28,11 @@ public class Response extends BasicHttpResponse {
     }
 
     private byte[] entityToBytes(HttpEntity entity) {
-        try {
-            return EntityUtils.toByteArray(entity);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            return EntityUtils.toByteArray(entity);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         return new byte[0];
     }
 

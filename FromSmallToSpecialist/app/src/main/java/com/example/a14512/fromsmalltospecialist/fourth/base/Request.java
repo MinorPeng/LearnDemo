@@ -2,6 +2,8 @@ package com.example.a14512.fromsmalltospecialist.fourth.base;
 
 import android.support.annotation.NonNull;
 
+import com.example.a14512.fromsmalltospecialist.fourth.base.e_num.HttpMethod;
+import com.example.a14512.fromsmalltospecialist.fourth.base.e_num.Priority;
 import com.example.a14512.fromsmalltospecialist.fourth.imp.RequestListener;
 
 import java.io.UnsupportedEncodingException;

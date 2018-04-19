@@ -1,6 +1,7 @@
 package com.example.a14512.fromsmalltospecialist.fourth.base;
 
-import com.example.a14512.fromsmalltospecialist.fourth.HttpStack;
+import com.example.a14512.fromsmalltospecialist.fourth.base.e_num.HttpMethod;
+import com.example.a14512.fromsmalltospecialist.fourth.imp.HttpStack;
 import com.example.a14512.fromsmalltospecialist.fourth.config.Config;
 
 import java.io.DataOutputStream;

@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.example.a14512.modularsample"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        //所有资源必须以此 prefix 开头，否则会报错
+        resourcePrefix "app_"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //arouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //java8
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //arouter
+    annotationProcessor rootProject.ext.arouterCompiler
+    //dagger2
+    annotationProcessor rootProject.ext.dagger2Compiler
+
+    if (isDebug.toBoolean()) {
+        //当isDebug true，app得依赖基础库，保证app不报错
+        implementation project(path: ':resource')
+    } else {
+        implementation project(path: ':module1')
+        implementation project(path: ':module2')
+    }
+}

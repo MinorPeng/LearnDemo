@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
             }
 //            startActivity(Intent().setClass(this, com.example.a14512.fromsmalltospecialist.activity.ListActivity::class.java))
         })
+        btnJunit.setOnClickListener({startActivity(Intent().setClass(this, ListActivity::class.java))})
 //        val refreshListView = RefreshListView(this)
 //        val dataStrings = arrayListOf<String>()
 //        var i = 0

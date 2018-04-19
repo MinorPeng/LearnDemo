@@ -1,10 +1,11 @@
 package com.example.a14512.fromsmalltospecialist.fourth;
 
-import android.support.constraint.solver.Cache;
 import android.util.Log;
 
 import com.example.a14512.fromsmalltospecialist.fourth.base.Request;
 import com.example.a14512.fromsmalltospecialist.fourth.base.Response;
+import com.example.a14512.fromsmalltospecialist.fourth.imp.Cache;
+import com.example.a14512.fromsmalltospecialist.fourth.imp.HttpStack;
 import com.example.a14512.fromsmalltospecialist.fourth.utils.LruMemCache;
 
 import java.util.concurrent.BlockingQueue;
