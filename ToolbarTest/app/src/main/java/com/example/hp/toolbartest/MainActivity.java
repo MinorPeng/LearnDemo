@@ -61,6 +61,14 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle("Title");//设置主标题
         toolbar.setSubtitle("Subtitle");//设置子标题
         setSupportActionBar(toolbar);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                //拦截重写的Click，只有这个生效
+                Toast.makeText(MainActivity.this, "menu", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
         //侧滑
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -159,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar, menu);
         return true;

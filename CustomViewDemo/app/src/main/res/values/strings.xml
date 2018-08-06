@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CustomViewDemo</string>
+    <string name="btn_control1">Control1</string>
+    <string name="btn_control2">Control2</string>
+</resources>

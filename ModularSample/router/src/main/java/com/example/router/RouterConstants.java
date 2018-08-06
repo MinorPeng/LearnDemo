@@ -2,6 +2,8 @@ package com.example.router;
 
 /**
  * @author 14512 on 2018/4/19
+ *
+ * 路由表的内容，进行组件间通信
  */
 public final class RouterConstants {
     /**

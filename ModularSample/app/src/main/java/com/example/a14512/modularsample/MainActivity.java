@@ -36,6 +36,7 @@ public class MainActivity extends BaseActivity {
             userModel.setMessage("个人博客：http：//wuxiaolong.me");
             Bundle bundle = new Bundle();
             bundle.putSerializable("obj", userModel);
+            //有数据传递的路由启动
             ARouter.getInstance()
                     .build(RouterConstants.MODULE1_MAIN_ACTIVITY)
                     .with(bundle)

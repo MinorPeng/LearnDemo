@@ -1,9 +1,10 @@
 package com.example.hp.recyclerview;
 
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private ContactsAdapter mAdapter;
-    LinearLayoutManager layoutManerger;
+    private LinearLayoutManager layoutManerger;
     private int lastVisibleItem;
 
     @Override
@@ -33,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
                 initContacts(5); //实例化数据
             }
         }, 4000);
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler_view);
         if (mContactsList != null) {
             mAdapter = new ContactsAdapter(mContactsList);
         }
-        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
+        mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         layoutManerger = new LinearLayoutManager(this);  //纵向布局
         /**
          * 横向布局
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(layoutManerger);  //设置布局的方式
         recyclerView.setAdapter(mAdapter);  //适配器配置
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));  //分割线
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, RecyclerView.VERTICAL));  //分割线
         //下拉刷新
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);  //设置刷新图标的颜色
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

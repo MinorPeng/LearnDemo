@@ -14,7 +14,7 @@ public class RouterUtils {
     public void startActivityForResult() {
         // 构建标准的路由请求，startActivityForResult
         // navigation的第一个参数必须是Activity，第二个参数则是RequestCode
-        //        ARouter.getInstance().build("/home/main").navigation(this, 5);
+//                ARouter.getInstance().build("/home/main").navigation(this, 5);
 
     }
 
