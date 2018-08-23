@@ -3,6 +3,9 @@ package com.example.a14512.servicedemo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+/**
+ * @author 14512
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override

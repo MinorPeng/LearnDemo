@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ScollerTest</string>
+    <string name="scroll_to">Scroll_to</string>
+    <string name="scroll_by">scroll_by</string>
+</resources>

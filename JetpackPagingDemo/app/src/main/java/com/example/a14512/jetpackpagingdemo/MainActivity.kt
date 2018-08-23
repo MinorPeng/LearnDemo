@@ -6,86 +6,75 @@ import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.graphics.Color
 import android.os.Bundle
+import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
-import android.widget.LinearLayout
+import android.util.Log
 import android.widget.Toast
+import com.example.a14512.jetpackpagingdemo.pagingdemo.Status
+import com.example.a14512.jetpackpagingdemo.pagingdemo.StuAdapter
+import com.example.a14512.jetpackpagingdemo.pagingdemo.StuDataRepository
+import com.example.a14512.jetpackpagingdemo.pagingdemo.StuViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.concurrent.Executor
+import java.util.concurrent.Executors
 
 class MainActivity : AppCompatActivity() {
-    private val mViewModel by lazy { ViewModelProviders.of(this).get(KituViewModel::class.java) }
-
-    private lateinit var mStudentKituViewModel: KituViewModel
-    private lateinit var mAdapter: KituPagedListAdapter
+    private lateinit var mStuViewModel: StuViewModel
+    private lateinit var mAdapter: StuAdapter
+    private lateinit var mRefreshLayout: SwipeRefreshLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initSearchFiled()
-        searchForResults("Android")
-        mStudentKituViewModel=getViewModel()
+
+        mStuViewModel = getViewModel()
         initAdapter()
-        initSwipeToRefresh()
-        mStudentKituViewModel.showDatas("")
+        initRefreshLayout()
+        mStuViewModel.showDatas("qwe")
     }
 
-    private fun getViewModel(): KituViewModel {
+    private fun getViewModel(): StuViewModel {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                val repo = KituDataRepository(Executor {  })
-                return KituViewModel(application, repo) as T
+                Log.d("debug", "create")
+                val repo = StuDataRepository(Executors.newFixedThreadPool(5))
+                return StuViewModel(application, repo) as T
             }
-        })[KituViewModel::class.java]
+        })[StuViewModel::class.java]
     }
-    private fun initSwipeToRefresh() {
-        swipeRefreshLayout.setColorSchemeColors(Color.BLUE, Color.GREEN, Color.RED, Color.YELLOW)
-        swipeRefreshLayout.setOnRefreshListener {
-            mStudentKituViewModel.refresh()
+
+    private fun initRefreshLayout() {
+        mRefreshLayout = swipe_Refresh_layout
+        mRefreshLayout.setColorSchemeColors(Color.BLUE, Color.GREEN, Color.YELLOW)
+        mRefreshLayout.setOnRefreshListener {
+            mStuViewModel.refresh()
         }
-        mStudentKituViewModel.refreshState.observe(this, Observer { result->
-            if (result==null){
+        mStuViewModel.refreState.observe(this, Observer {
+            if (it == null) {
                 return@Observer
             }
-            when(result.status){
-                Status.LOADING->{
-                    swipeRefreshLayout.isRefreshing=true
-                }
-                Status.SUCCESS->{
-                    swipeRefreshLayout.isRefreshing=false
-                }
-                Status.ERROR->{
-                    Toast.makeText(this, result.message, Toast.LENGTH_LONG).show()
-                    swipeRefreshLayout.isRefreshing=false
+            when(it.status) {
+                Status.LOADING -> { mRefreshLayout.isRefreshing = true }
+                Status.SUCCESS -> { mRefreshLayout.isRefreshing = false }
+                Status.ERROR -> {
+                    Toast.makeText(this, it.msg, Toast.LENGTH_SHORT).show()
+                    mRefreshLayout.isRefreshing = false
                 }
             }
         })
     }
+
     private fun initAdapter() {
-        val mLayoutManager = LinearLayoutManager(this)
-        mLayoutManager.orientation = LinearLayout.VERTICAL
-        mainRecyclerView.layoutManager = mLayoutManager
-        mainRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))//添加分割线
-        mAdapter= KituPagedListAdapter()
-        mainRecyclerView.adapter = mAdapter
-        mStudentKituViewModel.posts.observe(this, Observer((mAdapter::submitList)))
+        mAdapter = StuAdapter()
+        val layoutManager = LinearLayoutManager(this)
+        layoutManager.orientation = LinearLayoutManager.VERTICAL
+        val recyclerView = main_recycler_view
+        recyclerView.layoutManager = layoutManager
+        recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        recyclerView.adapter = mAdapter
+        mStuViewModel.posts.observe(this, Observer((mAdapter::submitList)))
     }
 
-    private fun initSearchFiled() {
-        //TODO ListAdapter与RecyclerView的包冲突
-    }
-
-
-    private fun searchForResults(queryFilter: String) {
-//        Log.e("activity", mViewModel.all.value?.size?.toString())
-//        initKitu()
-    }
-
-    private fun initKitu() {
-//        val adapter = KituPagedListAdapter()
-//        mainRecyclerView.adapter = adapter
-//        mViewModel.all.observe(this, Observer(adapter::setList))
-    }
 
 }
