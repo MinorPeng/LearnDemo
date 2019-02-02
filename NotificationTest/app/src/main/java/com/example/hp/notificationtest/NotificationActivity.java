@@ -3,6 +3,9 @@ package com.example.hp.notificationtest;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+/**
+ * @author 14512
+ */
 public class NotificationActivity extends AppCompatActivity {
 
     @Override

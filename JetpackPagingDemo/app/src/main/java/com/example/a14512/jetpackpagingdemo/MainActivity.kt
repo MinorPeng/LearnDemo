@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
@@ -12,12 +13,12 @@ import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.widget.Toast
+import com.example.a14512.jetpackpagingdemo.pagingdemo.ServiceLocator
 import com.example.a14512.jetpackpagingdemo.pagingdemo.Status
 import com.example.a14512.jetpackpagingdemo.pagingdemo.StuAdapter
-import com.example.a14512.jetpackpagingdemo.pagingdemo.StuDataRepository
 import com.example.a14512.jetpackpagingdemo.pagingdemo.StuViewModel
+import com.example.a14512.jetpackpagingdemo.nav.NavigationActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.concurrent.Executors
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mStuViewModel: StuViewModel
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        btn_navigation.setOnClickListener { startActivity(Intent(this, NavigationActivity::class.java)) }
 
         mStuViewModel = getViewModel()
         initAdapter()
@@ -38,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
                 Log.d("debug", "create")
-                val repo = StuDataRepository(Executors.newFixedThreadPool(5))
+                val repo = ServiceLocator.instance(this@MainActivity).getRepository()
                 return StuViewModel(application, repo) as T
             }
         })[StuViewModel::class.java]
