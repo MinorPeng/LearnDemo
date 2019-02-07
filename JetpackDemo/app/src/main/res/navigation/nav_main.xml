@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_main"
+            app:startDestination="@id/gank_fragment">
+
+    <fragment
+            android:id="@+id/detail_fragment"
+            android:name="com.example.jetpackdemo.v.DetailFragment"
+            android:label="detail fragment"
+            tools:layout="@layout/detail_fragment">
+
+        <argument android:name="url"
+                  app:argType="string"/>
+
+    </fragment>
+
+    <fragment
+            android:id="@+id/gank_fragment"
+            android:name="com.example.jetpackdemo.v.GankFragment"
+            android:label="gank fragment"
+            tools:layout="@layout/gank_fragment">
+
+        <action
+            android:id="@+id/action_gank_fragment_to_detail_fragment"
+            app:destination="@id/detail_fragment"/>
+
+    </fragment>
+</navigation>
