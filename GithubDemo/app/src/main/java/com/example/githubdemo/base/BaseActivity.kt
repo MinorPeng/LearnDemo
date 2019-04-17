@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.widget.ProgressBar
+import com.example.githubdemo.common.utils.ToastUtil
 
 /**
  * @author 14512 on 2019/4/16
  */
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity(), IBaseView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +47,11 @@ abstract class BaseActivity : AppCompatActivity() {
         mDialog?.show()
     }
 
-    protected fun dismissDialog() {
+    override fun dismissDialog() {
         mDialog?.dismiss()
+    }
+
+    override fun toastMsg(msg: String) {
+        ToastUtil.showShort(this, msg)
     }
 }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GithubDemo</string>
+    <string name="loading_more">上拉加载更过哦!</string>
 </resources>

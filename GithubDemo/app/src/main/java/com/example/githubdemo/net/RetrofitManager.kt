@@ -67,6 +67,7 @@ object RetrofitManager{
 //            HttpLoggingInterceptor.Level.BODY
         }
 
+        builder.cache(cache).addInterceptor(cacheInterceptor).addNetworkInterceptor(loggingInterceptor)
         //设置超时
         builder.connectTimeout(15, TimeUnit.SECONDS)
         builder.readTimeout(20, TimeUnit.SECONDS)

@@ -108,12 +108,16 @@ import com.google.gson.annotations.SerializedName
     default_branch: "master"
 },
  */
-data class User(var id: Int, var name: String,
-                @SerializedName("full_name") var fullName: String,
-                @SerializedName("html_url") var htmlUrl: String,
-                @SerializedName("stargazers_count") var stars: Long,
-                var forks: Long) {
+data class User(var id: Int, var name: String?,
+                @SerializedName("full_name") var fullName: String?,
+                @SerializedName("html_url") var htmlUrl: String?,
+                @SerializedName("stargazers_count") var stars: Long?,
+                var forks: Long?, var owner: Owner?) {
 
-    data class Owner(var login: String,
-                     @SerializedName("avatar_url") var portrait: String)
+    data class Owner(var login: String?,
+                     @SerializedName("avatar_url") var portrait: String?)
+
+    override fun toString(): String {
+        return "id:$id, name:$name, fullName:$fullName, stars:$stars, forks:$forks, portrait:${owner?.portrait}"
+    }
 }
