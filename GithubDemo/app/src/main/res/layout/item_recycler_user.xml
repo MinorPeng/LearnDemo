@@ -55,4 +55,14 @@
             app:layout_constraintStart_toEndOf="@+id/tvItemUserName"
             app:layout_constraintHorizontal_bias="1.0"
             tools:text="32"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@android:color/darker_gray"
+          android:layout_marginTop="8dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imgPortrait"
+          app:layout_constraintVertical_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"/>
 </android.support.constraint.ConstraintLayout>

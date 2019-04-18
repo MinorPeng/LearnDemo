@@ -1,5 +1,8 @@
 package com.example.githubdemo.moudels
 
+import android.arch.persistence.room.Embedded
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 /**
@@ -108,11 +111,13 @@ import com.google.gson.annotations.SerializedName
     default_branch: "master"
 },
  */
-data class User(var id: Int, var name: String?,
+@Entity(tableName = "users")
+data class User(@PrimaryKey var id: Int, var name: String?,
                 @SerializedName("full_name") var fullName: String?,
                 @SerializedName("html_url") var htmlUrl: String?,
                 @SerializedName("stargazers_count") var stars: Long?,
-                var forks: Long?, var owner: Owner?) {
+                var forks: Long?,
+                @Embedded var owner: Owner?) {
 
     data class Owner(var login: String?,
                      @SerializedName("avatar_url") var portrait: String?)

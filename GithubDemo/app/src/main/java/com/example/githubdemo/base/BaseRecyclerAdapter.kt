@@ -14,7 +14,7 @@ abstract class BaseRecyclerAdapter<T> : RecyclerView.Adapter<BaseViewHolder> {
     /**
      * footer view viewType
      */
-    private val FOOTER_VIEW = -1
+    private val FOOTER_VIEW = -2
 
     constructor(datas: MutableList<T>?): this(datas, null)
 
@@ -100,15 +100,10 @@ abstract class BaseRecyclerAdapter<T> : RecyclerView.Adapter<BaseViewHolder> {
         }
     }
 
-    override fun getItemCount(): Int {
-        if (mFooterId != null) {
-            return if (mDatas == null) 0 else mDatas?.size!! - 1
-        }
-        return if (mDatas == null) 0 else mDatas?.size!!
-    }
+    override fun getItemCount(): Int = 0.takeIf { mDatas.isNullOrEmpty() } ?: mDatas!!.size + 1
 
     override fun getItemViewType(position: Int): Int {
-        return if (mFooterId != null && position == itemCount + 1) {
+        return if (mFooterId != null && position == mDatas?.size) {
             FOOTER_VIEW
         } else {
             super.getItemViewType(position)
@@ -127,4 +122,5 @@ abstract class BaseRecyclerAdapter<T> : RecyclerView.Adapter<BaseViewHolder> {
     abstract fun bindHolder(holder: BaseViewHolder, position: Int)
 
     abstract fun bindFooter(holder: BaseViewHolder, position: Int)
+
 }

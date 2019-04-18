@@ -1,6 +1,5 @@
 package com.example.githubdemo.moudels.main.v
 
-import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
@@ -29,14 +28,17 @@ class MainActivity : BaseActivity(), IMainView {
         mLinearLayoutManager = LinearLayoutManager(this)
 
         recyclerView.layoutManager = mLinearLayoutManager
-        recyclerView.addItemDecoration(DividerItemDecoration(this, RecyclerView.VERTICAL))
         recyclerView.adapter = mAdapter
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
+                LogUtil.e(localClassName, "scro $mLastVisibleItem ${mAdapter.itemCount} ${mAdapter.getDatas()?.size}")
                 if (newState == RecyclerView.SCROLL_STATE_IDLE && mLastVisibleItem + 1 == mAdapter.itemCount
-                    && mString != null && mAdapter.isLoadingMore()) {
+                    && mString != null) {
                     mPresenter.getUserByPage(mString!!, mPages + 1)
+                    mAdapter.loadMoreFooter()
+                } else {
+                    mAdapter.noMoreFooter()
                 }
             }
 
@@ -59,6 +61,7 @@ class MainActivity : BaseActivity(), IMainView {
         swipeRefresh.setOnRefreshListener {
             if (mString == null) {
                 toastMsg("search content can't be null!")
+                swipeRefresh.isRefreshing = false
             } else {
                 mPresenter.searchUser(mString!!)
             }
@@ -85,7 +88,7 @@ class MainActivity : BaseActivity(), IMainView {
 
     override fun setAdapter(users: List<User>) {
         swipeRefresh.isRefreshing = false
-        LogUtil.e(localClassName, "${users.size}  ${users[0]}")
+        LogUtil.e(localClassName, "${users.size} ${users?.get(0)}")
         mAdapter.clear()
         mAdapter.addAll(users.toMutableList())
         LogUtil.e(localClassName, "${mAdapter.getDatas()?.size}")

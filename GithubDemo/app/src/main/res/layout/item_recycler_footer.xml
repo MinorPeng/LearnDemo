@@ -3,6 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/tvItemFooter"
         android:text="@string/loading_more"
+        android:visibility="gone"
         android:gravity="center"
         android:padding="5dp"
         android:layout_width="match_parent"

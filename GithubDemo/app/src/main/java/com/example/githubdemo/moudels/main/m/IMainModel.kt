@@ -12,5 +12,5 @@ interface IMainModel {
 
     fun setUsersToCache(users: List<User>)
 
-    fun getUsersFromCache(): List<User>
+    fun getUsersFromCache(userName: String, page: Int): List<User>?
 }
