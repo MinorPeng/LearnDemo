@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="CalculateButton" parent="TextAppearance.AppCompat.Widget.Button">
+        <item name="android:textSize">@dimen/sp_36</item>
+        <item name="android:backgroundTint" tools:ignore="NewApi">@android:color/white</item>
+    </style>
+
+    <style name="OperateButton" parent="CalculateButton">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+</resources>

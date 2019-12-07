@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.phs1024.studydemo.report.custom.CircleMoveView
+        android:id="@+id/circle_view"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="center" />
+
+    <View
+        android:id="@+id/view_rect"
+        android:layout_width="@dimen/dp_240"
+        android:layout_height="@dimen/dp_120"
+        android:background="@drawable/bg_rect"/>
+
+</FrameLayout>

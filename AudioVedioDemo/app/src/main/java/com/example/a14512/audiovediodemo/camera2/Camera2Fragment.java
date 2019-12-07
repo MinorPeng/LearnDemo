@@ -59,7 +59,7 @@ import java.util.List;
  * @author 14512 on 2019/2/28
  */
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-public class Cemara2Fragment extends Fragment {
+public class Camera2Fragment extends Fragment {
     private static final String TAG = "Camera2Fragment";
     private static final int SETIMAGE = 1;
     private static final int MOVE_FOCK = 2;
@@ -537,6 +537,8 @@ public class Cemara2Fragment extends Fragment {
                     } catch (CameraAccessException e) {
                         e.printStackTrace();
                     }
+                    break;
+                default:
                     break;
             }
             return false;

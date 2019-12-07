@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/fragment"
-        android:name="com.example.a14512.audiovediodemo.camera2.Cemara2Fragment"
+        android:name="com.example.a14512.audiovediodemo.camera2.Camera2Fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "E:\\Android\\AndroidProjects\\LearnDemo\\AudioVedioDemo\\app\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "\"C:\\Program Files\\Android\\SDK\\cmake\\3.6.4111459\\bin\\cmake.exe\" --build E:\\Android\\AndroidProjects\\LearnDemo\\AudioVedioDemo\\app\\.cxx\\cmake\\release\\arm64-v8a --target clean"
+  ],
+  "libraries": {
+    "native-lib-Release-arm64-v8a": {
+      "artifactName": "native-lib",
+      "buildCommand": "\"C:\\Program Files\\Android\\SDK\\cmake\\3.6.4111459\\bin\\cmake.exe\" --build E:\\Android\\AndroidProjects\\LearnDemo\\AudioVedioDemo\\app\\.cxx\\cmake\\release\\arm64-v8a --target native-lib",
+      "abi": "arm64-v8a",
+      "output": "E:\\Android\\AndroidProjects\\LearnDemo\\AudioVedioDemo\\app\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libnative-lib.so"
+    }
+  }
+}

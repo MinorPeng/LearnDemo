@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_date"
+        android:title="@string/date"/>
+
+    <item android:id="@+id/menu_dialog"
+        android:title="@string/dialog"/>
+
+    <item android:id="@+id/menu_context"
+        android:title="@string/context_menu"/>
+
+    <item android:id="@+id/menu_main_report2"
+        android:title="@string/main_report2"/>
+
+</menu>

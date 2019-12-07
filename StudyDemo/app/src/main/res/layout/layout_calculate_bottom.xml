@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbarSize="@dimen/dp_0">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_add"
+            style="@style/OperateButton"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/add" />
+
+        <Button
+            android:id="@+id/btn_subtract"
+            style="@style/OperateButton"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/subtract" />
+
+        <Button
+            android:id="@+id/btn_multiply"
+            style="@style/OperateButton"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/multiply" />
+
+        <Button
+            android:id="@+id/btn_divide"
+            style="@style/OperateButton"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/divide" />
+
+        <Button
+            android:id="@+id/btn_left_parenthesis"
+            style="@style/OperateButton"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/left_parenthesis" />
+
+        <Button
+            android:id="@+id/btn_right_parenthesis"
+            style="@style/OperateButton"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/right_parenthesis" />
+
+        <Button
+            android:id="@+id/btn_pow"
+            style="@style/OperateButton"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/pow"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_remainder"
+            style="@style/OperateButton"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/remainder"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</HorizontalScrollView>

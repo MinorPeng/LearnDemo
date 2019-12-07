@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_report2"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/tv_report2_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp_16"
+        android:textSize="@dimen/sp_36"
+        android:layout_gravity="center"
+        android:textColor="@android:color/white"
+        tools:text="16:24"/>
+
+</FrameLayout>

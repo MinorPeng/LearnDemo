@@ -1,0 +1,41 @@
+
+{
+	"buildFiles" : 
+	[
+		"E:/Android/AndroidProjects/LearnDemo/AudioVedioDemo/app/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"\"C:\\Program Files\\Android\\SDK\\cmake\\3.6.4111459\\bin\\cmake.exe\" --build E:\\Android\\AndroidProjects\\LearnDemo\\AudioVedioDemo\\app\\.cxx\\cmake\\debug\\armeabi-v7a --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"native-lib-Debug-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "native-lib",
+			"buildCommand" : "\"C:\\Program Files\\Android\\SDK\\cmake\\3.6.4111459\\bin\\cmake.exe\" --build E:\\Android\\AndroidProjects\\LearnDemo\\AudioVedioDemo\\app\\.cxx\\cmake\\debug\\armeabi-v7a --target native-lib",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=\"C:/Program Files/Android/SDK/ndk/20.0.5594570/toolchains/llvm/prebuilt/windows-x86_64\" --sysroot=\"C:/Program Files/Android/SDK/ndk/20.0.5594570/toolchains/llvm/prebuilt/windows-x86_64/sysroot\"  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "E:/Android/AndroidProjects/LearnDemo/AudioVedioDemo/app/src/main/cpp/native-lib.cpp",
+					"workingDirectory" : "E:/Android/AndroidProjects/LearnDemo/AudioVedioDemo/app/.cxx/cmake/debug/armeabi-v7a"
+				}
+			],
+			"output" : "E:/Android/AndroidProjects/LearnDemo/AudioVedioDemo/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so",
+			"toolchain" : "1188022109"
+		}
+	},
+	"toolchains" : 
+	{
+		"1188022109" : 
+		{
+			"cCompilerExecutable" : "C:/Program Files/Android/SDK/ndk/20.0.5594570/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "C:/Program Files/Android/SDK/ndk/20.0.5594570/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}
