@@ -1,7 +1,7 @@
-Executable : C:\Program Files\Android\SDK\cmake\3.6.4111459\bin\cmake.exe
+Executable : C:\Users\PHS1024\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\cmake.exe
 arguments : 
 --build
-E:\Android\AndroidProjects\LearnDemo\AudioVedioDemo\app\.cxx\cmake\debug\armeabi-v7a
+D:\Study\AndroidProjects\LearnDemo\AudioVedioDemo\app\.cxx\cmake\debug\armeabi-v7a
 --target
 native-lib
 jvmArgs : 

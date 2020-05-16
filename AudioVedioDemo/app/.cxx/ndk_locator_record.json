@@ -1,5 +1,5 @@
 {
-  "ndkFolder": "C:\\Users\\PHS1024\\AppData\\Local\\Android\\Sdk\\ndk\\20.0.5594570",
+  "ndkFolder": "C:\\Users\\PHS1024\\AppData\\Local\\Android\\Sdk\\ndk\\20.1.5948944",
   "messages": [
     {
       "level": "INFO",
@@ -23,7 +23,7 @@
     },
     {
       "level": "INFO",
-      "message": "Considering C:\\Users\\PHS1024\\AppData\\Local\\Android\\Sdk\\ndk\\20.0.5594570 in SDK ndk folder"
+      "message": "Considering C:\\Users\\PHS1024\\AppData\\Local\\Android\\Sdk\\ndk\\20.1.5948944 in SDK ndk folder"
     },
     {
       "level": "INFO",
@@ -31,7 +31,7 @@
     },
     {
       "level": "INFO",
-      "message": "No user requested version, choosing C:\\Users\\PHS1024\\AppData\\Local\\Android\\Sdk\\ndk\\20.0.5594570 which is version 20.0.5594570"
+      "message": "No user requested version, choosing C:\\Users\\PHS1024\\AppData\\Local\\Android\\Sdk\\ndk\\20.1.5948944 which is version 20.1.5948944"
     }
   ]
 }

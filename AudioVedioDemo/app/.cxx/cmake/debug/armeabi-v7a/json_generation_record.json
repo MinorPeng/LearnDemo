@@ -1,11 +1,11 @@
 [
   {
     "level": "INFO",
-    "message": "Start JSON generation. Platform version: 16 min SDK version: armeabi-v7a"
+    "message": "Start JSON generation. Platform version: 26 min SDK version: armeabi-v7a"
   },
   {
     "level": "INFO",
-    "message": "JSON \u0027E:\\Android\\AndroidProjects\\LearnDemo\\AudioVedioDemo\\app\\.cxx\\cmake\\debug\\armeabi-v7a\\android_gradle_build.json\u0027 was up-to-date"
+    "message": "JSON \u0027D:\\Study\\AndroidProjects\\LearnDemo\\AudioVedioDemo\\app\\.cxx\\cmake\\debug\\armeabi-v7a\\android_gradle_build.json\u0027 was up-to-date"
   },
   {
     "level": "INFO",

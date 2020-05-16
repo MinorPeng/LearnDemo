@@ -21,15 +21,11 @@ import android.media.ImageReader;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.util.Range;
 import android.util.Size;
@@ -42,6 +38,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.example.a14512.audiovediodemo.R;
 
@@ -58,7 +57,6 @@ import java.util.List;
 /**
  * @author 14512 on 2019/2/28
  */
-@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class Camera2Fragment extends Fragment {
     private static final String TAG = "Camera2Fragment";
     private static final int SETIMAGE = 1;
